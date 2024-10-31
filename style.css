@@ -1,0 +1,306 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #5c94fc;
+  color: #FFD700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 0.5s ease;
+}
+
+.mario-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/mario_background.jpg') repeat-x;
+  background-size: cover;
+  z-index: -1;
+  animation: bgScroll 10s linear infinite;
+}
+
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/cloud.jpg') repeat-x;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: -1;
+  animation: cloudsScroll 30s linear infinite;
+}
+
+.clouds-secondary {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/clouds_secondary.jpg') repeat-x;
+  background-size: cover;
+  opacity: 0.3;
+  z-index: -2;
+  animation: cloudsScroll 40s linear infinite;
+}
+
+.screen {
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+.screen h1, .screen h2 {
+  color: #FFF;
+  animation: blink 1s infinite alternate;
+}
+
+.screen h1.pulse {
+  animation: pulse 1s infinite alternate;
+}
+
+.screen button {
+  font-family: 'Press Start 2P', cursive;
+  color: #FFF;
+  background: #FF0000;
+  border: 2px solid #FF0000;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.screen button:hover {
+  background: #ffcc00;
+  border-color: #ffcc00;
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.7);
+}
+
+.project-item {
+  margin: 10px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+#social-media {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  animation: bounce 1s infinite; /* Infinite bounce animation */
+}
+
+.social-icon:hover {
+  animation: jump 0.5s forwards;
+}
+
+.education-item {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.education-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.education-item h3 {
+  color: #FF7F50; /* Coral color for headings */
+}
+
+.education-item p {
+  color: #FFD700; /* Gold color for text */
+  animation: fadeIn 1s forwards;
+  opacity: 0; /* Initially hidden */
+  animation-delay: 0.5s; /* Delay before fade-in */
+}
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Make sure it's on top */
+}
+
+#loading-screen h1 {
+  color: #FF4500; /* Retro orange color */
+  animation: blink 1s linear infinite;
+}
+
+.loader {
+  margin: 20px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.atom {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border: 5px solid #FF4500; /* Orange border for atom */
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+.electron {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: #1E90FF; /* Dodger Blue */
+  border-radius: 50%;
+  animation: orbit 1s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 0.8em;
+  }
+
+  .screen button {
+    padding: 8px 15px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+@keyframes orbit {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(30px) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn) translateX(30px) rotate(-1turn);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+
+/* Bounce effect */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Jump effect on hover */
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Animations */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes bgScroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1000px 0;
+  }
+}
+
+@keyframes cloudsScroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -500px 0;
+  }
+}
+
+/* About Me Text Styling */
+#about-text {
+  color: #FF4500; /* Desired color */
+  font-size: 1.2em; /* Adjust font size */
+  white-space: pre-wrap; /* Preserve line breaks */
+  margin-top: 20px;
+  opacity: 5; 
+  transition: opacity 0.3s ease-in-out;
+}
+
+#about-me-title {
+  color: white;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000; /* Black shadow */
+}

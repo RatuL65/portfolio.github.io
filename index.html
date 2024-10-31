@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000">MD. Reduan Islam Ratul's Mario Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="loading-screen">
+    <h1>Loading...</h1>
+    <div class="loader">
+      <div class="atom">
+        <div class="electron"></div>
+      </div>
+    </div>
+  </div>
+  <div class="mario-bg"></div>
+  <div class="clouds"></div>
+  
+  <audio id="jump-sound" src="sounds/jump.mp3"></audio>
+  <audio id="powerup-sound" src="sounds/powerup.mp3"></audio>
+
+  <!-- Home Screen -->
+  <section id="home-screen" class="screen">
+    <h1 class="pulse" style="color:red">Press Start to Enter</h1>
+    <button onclick="playSound('jump-sound'); navigate('intro-screen')">Start</button>
+  </section>
+
+  <!-- Intro Screen -->
+  <section id="intro-screen" class="screen hidden">
+    <h2 style="color:yellowgreen">Welcome to Ratul's Mario-style Portfolio</h2>
+    <p>Explore my adventures in projects and education!</p>
+    <button onclick="playSound('powerup-sound'); navigate('projects-screen')">Projects</button>
+    <button onclick="playSound('jump-sound'); navigate('education-screen')">Education</button>
+    <button onclick="playSound('jump-sound'); navigate('about-me-screen')">About Me</button>
+    <button onclick="playSound('jump-sound'); navigate('contact-screen')">Contact Me</button>
+  </section>
+
+    <!-- About Me Screen -->
+    <section id="about-me-screen" class="screen hidden">
+      <h2 style="color:brown">About Me</h2>
+      <p id="about-text"></p>
+      <button onclick="playSound('jump-sound'); navigate('contact-screen')">Contact Me</button>
+      <button onclick="playSound('jump-sound'); navigate('intro-screen')">Back</button>
+    </section>
+
+    <!-- Education Screen -->
+<section id="education-screen" class="screen hidden">
+  <h2 style="color:red">Education</h2>
+  <div class="education-item">
+    <h3>SSC (2019-2021)</h3>
+    <p>Institution: Monipur High School & College</p>
+    <p>GPA: 5.00 out of 5.00</p>
+  </div>
+  <div class="education-item">
+    <h3>HSC (2021-2023)</h3>
+    <p>Institution: Notre Dame College</p>
+    <p>GPA: 5.00 out of 5.00</p>
+  </div>
+  <div class="education-item">
+    <h3>BSc (2024-current)</h3>
+    <p>Department: Industrial and Production Engineering</p>
+    <p>Institution: Bangladesh University of Engineering & Technology</p>
+  </div>
+  <button onclick="playSound('jump-sound'); navigate('intro-screen')">Back</button>
+</section>
+
+<!-- Projects Screen -->
+<section id="projects-screen" class="screen hidden">
+  <h2 style="color:red">Projects</h2>
+  <div class="project-item">
+    <strong>EmoTune:</strong> A real-time emotion-based music player that captures and analyzes emotions to suggest playlists. Check it out <a href="https://github.com/RatuL65/EmoTune" target="_blank" style="color: yellow; text-decoration: underline;">here</a>!
+  </div>
+  <button onclick="playSound('jump-sound'); navigate('intro-screen')">Back</button>
+</section>
+
+
+  <!-- Contact Me Screen -->
+  <section id="contact-screen" class="screen hidden">
+    <h2 style="color:brown">Contact Me</h2>
+    <div id="social-media">
+      <h2 style="color:red">Connect with Me!</h2>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/r3D.0nE/" target="_blank" onclick="playSound('jump-sound')">
+          <img src="images/fb.jpg" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://github.com/RatuL65" target="_blank" onclick="playSound('jump-sound')">
+          <img src="images/github2.jpg" alt="GitHub" class="social-icon">
+        </a>
+        <a href="https://linkedin.com/in/reduan-islam-ratul-4040461b7" target="_blank" onclick="playSound('jump-sound')">
+          <img src="images/linkedin.png" alt="LinkedIn" class="social-icon">
+        </a>
+        <a href="mailto:ratul21.mubc@gmail.com" target="_blank" onclick="playSound('jump-sound')">
+          <img src="images/gmail.jpg" alt="Gmail" class="social-icon">
+        </a>
+      </div>
+    </div>
+    <button onclick="playSound('jump-sound'); navigate('about-me-screen')">About Me</button>
+    <button onclick="playSound('jump-sound'); navigate('intro-screen')">Back</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
