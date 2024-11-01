@@ -37,7 +37,7 @@ function typeAboutMe() {
   if (index < aboutContent.length) {
     aboutText.innerText += aboutContent.charAt(index);
     index++;
-    setTimeout(typeAboutMe, 100); 
+    setTimeout(typeAboutMe, 60); 
   }
 }
 
